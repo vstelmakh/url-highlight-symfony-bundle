@@ -5,10 +5,11 @@
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {
+        "symfony/http-kernel": "^2.7|^3|^4|^5"
     },
     "autoload": {
         "psr-4": {
-            "VStelmakh\\TwigUrlHighlightBundle\\": "src/"
+            "VStelmakh\\Bundle\\TwigUrlHighlightBundle\\": "src/"
         }
     }
 }
