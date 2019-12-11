@@ -1,0 +1,14 @@
+{
+    "name": "vstelmakh/twig-url-highlight-bundle",
+    "description": "Symfony bundle for twig url highlight extension",
+    "keywords": ["symfony", "bundle", "highlight", "url", "html"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "VStelmakh\\TwigUrlHighlightBundle\\": "src/"
+        }
+    }
+}
