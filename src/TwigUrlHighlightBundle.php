@@ -1,6 +1,6 @@
 <?php
 
-namespace VStelmakh\Bundle\TwigUrlHighlightBundle;
+namespace VStelmakh\TwigUrlHighlightBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

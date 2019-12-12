@@ -1,6 +1,6 @@
 <?php
 
-namespace VStelmakh\Bundle\TwigUrlHighlightBundle\DependencyInjection;
+namespace VStelmakh\TwigUrlHighlightBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
