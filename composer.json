@@ -9,7 +9,7 @@
         "symfony/config": "^2.7|^3|^4|^5",
         "symfony/dependency-injection": "^2.7|^3|^4|^5",
         "symfony/http-kernel": "^2.7|^3|^4|^5",
-        "vstelmakh/twig-url-highlight": "*"
+        "vstelmakh/twig-url-highlight": "^1"
     },
     "autoload": {
         "psr-4": {
