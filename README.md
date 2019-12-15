@@ -1,5 +1,5 @@
 # Twig url highlight bundle
-Symfony bundle for twig url highlight extension  
+Symfony bundle for [Twig url highlight](https://github.com/vstelmakh/twig-url-highlight) extension  
 
 ## Installation
 Install the latest version with:  
