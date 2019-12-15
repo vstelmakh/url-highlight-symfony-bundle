@@ -1,0 +1,45 @@
+name: build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        symfony: ['^2.7', '^3', '^4', '^5']
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v1
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Require Symfony dependencies
+        run: composer require --no-update symfony/config:${{ matrix.symfony }} symfony/dependency-injection:${{ matrix.symfony }} symfony/http-kernel:${{ matrix.symfony }}
+
+      - name: Get Composer cache dir
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-${{ matrix.symfony }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-${{ matrix.symfony }}-composer-
+
+      - name: Install Composer dependencies
+        run: composer update --prefer-dist --no-progress --no-suggest --no-interaction
+
+      - name: Run PHP Code Sniffer
+        run: composer run-script test:phpcs
+        if: success()
+
+      - name: Run PHP Stan
+        run: composer run-script test:phpstan
+        if: success() || failure()
+
+      - name: Run PHP Unit
+        run: composer run-script test:phpunit
+        if: success() || failure()
