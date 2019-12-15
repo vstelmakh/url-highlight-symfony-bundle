@@ -9,6 +9,11 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class TwigUrlHighlightExtension extends Extension
 {
+    /**
+     * @param array|array[] $configs
+     * @param ContainerBuilder $container
+     * @throws \Exception
+     */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
