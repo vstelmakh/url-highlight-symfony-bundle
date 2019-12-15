@@ -11,9 +11,22 @@
         "symfony/http-kernel": "^2.7|^3|^4|^5",
         "vstelmakh/twig-url-highlight": "^1"
     },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5"
+    },
     "autoload": {
         "psr-4": {
             "VStelmakh\\TwigUrlHighlightBundle\\": "src/"
         }
+    },
+    "scripts": {
+        "test:phpcs": "vendor/bin/phpcs -n",
+        "test:all": [
+            "@test:phpcs"
+        ]
+    },
+    "scripts-descriptions": {
+        "test:phpcs": "Run PHP Code Sniffer",
+        "test:all": "Run all code analysis and tests"
     }
 }
