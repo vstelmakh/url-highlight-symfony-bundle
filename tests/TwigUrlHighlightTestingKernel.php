@@ -3,10 +3,11 @@
 namespace VStelmakh\TwigUrlHighlightBundle\Tests;
 
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
 use VStelmakh\TwigUrlHighlightBundle\TwigUrlHighlightBundle;
 
-class SymfonyTestingKernel extends Kernel
+class TwigUrlHighlightTestingKernel extends Kernel
 {
     /**
      * @inheritDoc
@@ -23,5 +24,13 @@ class SymfonyTestingKernel extends Kernel
      */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected function build(ContainerBuilder $container)
+    {
+        $container->addCompilerPass(new TwigUrlHighlightPass());
     }
 }

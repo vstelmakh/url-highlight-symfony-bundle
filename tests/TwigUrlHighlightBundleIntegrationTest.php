@@ -9,7 +9,7 @@ class TwigUrlHighlightBundleIntegrationTest extends TestCase
 {
     public function testServiceWiring(): void
     {
-        $kernel = new SymfonyTestingKernel('test', true);
+        $kernel = new TwigUrlHighlightTestingKernel('test', true);
         $kernel->boot();
         $container = $kernel->getContainer();
 
