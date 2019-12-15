@@ -13,24 +13,33 @@
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5",
-        "phpstan/phpstan": "^0.12.3"
+        "phpstan/phpstan": "^0.12.3",
+        "phpunit/phpunit": "^8.5"
     },
     "autoload": {
         "psr-4": {
             "VStelmakh\\TwigUrlHighlightBundle\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "VStelmakh\\TwigUrlHighlightBundle\\Tests\\": "tests/"
+        }
+    },
     "scripts": {
         "test:phpcs": "vendor/bin/phpcs -n",
         "test:phpstan": "phpstan analyse --ansi --no-progress",
+        "test:phpunit": "phpunit --colors=always",
         "test:all": [
             "@test:phpcs",
-            "@test:phpstan"
+            "@test:phpstan",
+            "@test:phpunit"
         ]
     },
     "scripts-descriptions": {
         "test:phpcs": "Run PHP Code Sniffer",
         "test:phpstan": "Run PHP Stan",
+        "test:phpunit": "Run PHP Unit",
         "test:all": "Run all code analysis and tests"
     }
 }
