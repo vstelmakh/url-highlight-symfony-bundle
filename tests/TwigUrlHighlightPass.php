@@ -11,7 +11,7 @@ class TwigUrlHighlightPass implements CompilerPassInterface
     /**
      * @inheritDoc
      */
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         $twigExtensions = $container->findTaggedServiceIds('twig.extension');
 
