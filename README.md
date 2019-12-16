@@ -1,4 +1,8 @@
 # Twig url highlight bundle
+![Build status](https://github.com/vstelmakh/twig-url-highlight-bundle/workflows/build/badge.svg?branch=master)
+![PHP version](https://img.shields.io/packagist/php-v/vstelmakh/twig-url-highlight-bundle)
+![License](https://img.shields.io/github/license/vstelmakh/twig-url-highlight-bundle)
+
 Symfony bundle for [Twig url highlight](https://github.com/vstelmakh/twig-url-highlight) extension  
 
 ## Installation
