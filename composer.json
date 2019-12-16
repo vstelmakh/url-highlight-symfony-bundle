@@ -28,8 +28,8 @@
     },
     "scripts": {
         "test:phpcs": "vendor/bin/phpcs -n",
-        "test:phpstan": "phpstan analyse --ansi --no-progress",
-        "test:phpunit": "phpunit --colors=always",
+        "test:phpstan": "vendor/bin/phpstan analyse --ansi --no-progress",
+        "test:phpunit": "vendor/bin/phpunit --colors=always",
         "test:all": [
             "@test:phpcs",
             "@test:phpstan",
