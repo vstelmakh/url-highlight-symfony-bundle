@@ -3,3 +3,9 @@ parameters:
     paths:
         - src
         - tests
+
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        -
+            message: '#Cannot call method get() on Symfony\Component\DependencyInjection\ContainerInterface|null.#'
+            path: %rootDir%/../../../tests/TwigUrlHighlightBundleIntegrationTest.php
