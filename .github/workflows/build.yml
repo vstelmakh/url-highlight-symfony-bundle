@@ -1,6 +1,9 @@
 name: build
 
-on: [push]
+on:
+  push:
+  schedule:
+    - cron: '0 12 * * 0'
 
 jobs:
   build:
@@ -29,8 +32,8 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.symfony }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-${{ matrix.symfony }}-composer-
 
-      - name: Install Composer dependencies
-        run: composer update --prefer-dist --no-progress --no-suggest --no-interaction
+      - name: Update Composer dependencies
+        run: composer update --prefer-lowest --prefer-dist --no-progress --no-suggest --no-interaction
 
       - name: Run PHP Code Sniffer
         run: composer run-script test:phpcs
