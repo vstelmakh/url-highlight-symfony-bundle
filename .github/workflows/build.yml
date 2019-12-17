@@ -11,6 +11,7 @@ jobs:
     strategy:
       matrix:
         symfony: ['^2.7', '^3', '^4', '^5']
+        composer: ['--prefer-lowest', '']
     steps:
       - name: Git checkout
         uses: actions/checkout@v1
@@ -29,11 +30,11 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-${{ matrix.symfony }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: ${{ runner.os }}-${{ matrix.symfony }}-composer-
+          key: ${{ runner.os }}-${{ matrix.symfony }}${{ matrix.composer }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-${{ matrix.symfony }}${{ matrix.composer }}-composer-
 
       - name: Update Composer dependencies
-        run: composer update --prefer-lowest --prefer-dist --no-progress --no-suggest --no-interaction
+        run: composer update ${{ matrix.composer }} --prefer-dist --no-progress --no-suggest --no-interaction
 
       - name: Run PHP Code Sniffer
         run: composer run-script test:phpcs
