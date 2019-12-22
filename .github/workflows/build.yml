@@ -22,6 +22,10 @@ jobs:
       - name: Require Symfony dependencies
         run: composer require --no-update symfony/config:${{ matrix.symfony }} symfony/dependency-injection:${{ matrix.symfony }} symfony/http-kernel:${{ matrix.symfony }}
 
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
       - name: Get Composer cache dir
         id: composer-cache
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
@@ -30,8 +34,8 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-${{ matrix.symfony }}${{ matrix.composer }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: ${{ runner.os }}-${{ matrix.symfony }}${{ matrix.composer }}-composer-
+          key: ${{steps.date.outputs.date}}-${{ runner.os }}-${{ matrix.symfony }}${{ matrix.composer }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: ${{steps.date.outputs.date}}-${{ runner.os }}-${{ matrix.symfony }}${{ matrix.composer }}-composer-
 
       - name: Update Composer dependencies
         run: composer update ${{ matrix.composer }} --prefer-dist --no-progress --no-suggest --no-interaction

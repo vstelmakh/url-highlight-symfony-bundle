@@ -1,6 +1,6 @@
 {
     "name": "vstelmakh/url-highlight-symfony-bundle",
-    "description": "Symfony bundle for url highlight library ",
+    "description": "Symfony bundle for url highlight library",
     "keywords": ["symfony", "bundle", "highlight", "url", "html"],
     "type": "symfony-bundle",
     "license": "MIT",
