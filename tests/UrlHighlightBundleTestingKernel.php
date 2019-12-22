@@ -1,14 +1,14 @@
 <?php
 
-namespace VStelmakh\TwigUrlHighlightBundle\Tests;
+namespace VStelmakh\UrlHighlightSymfonyBundle\Tests;
 
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\HttpKernel\Kernel;
-use VStelmakh\TwigUrlHighlightBundle\TwigUrlHighlightBundle;
+use VStelmakh\UrlHighlightSymfonyBundle\UrlHighlightSymfonyBundle;
 
-class TwigUrlHighlightTestingKernel extends Kernel
+class UrlHighlightBundleTestingKernel extends Kernel
 {
     /**
      * @return array|Bundle[]
@@ -16,7 +16,7 @@ class TwigUrlHighlightTestingKernel extends Kernel
     public function registerBundles(): array
     {
         return [
-            new TwigUrlHighlightBundle(),
+            new UrlHighlightSymfonyBundle(),
         ];
     }
 
@@ -32,6 +32,6 @@ class TwigUrlHighlightTestingKernel extends Kernel
      */
     protected function build(ContainerBuilder $container): void
     {
-        $container->addCompilerPass(new TwigUrlHighlightPass());
+        $container->addCompilerPass(new UrlHighlightBundlePass());
     }
 }

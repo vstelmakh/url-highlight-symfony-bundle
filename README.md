@@ -1,14 +1,14 @@
 # Twig url highlight bundle
-![Build status](https://github.com/vstelmakh/twig-url-highlight-bundle/workflows/build/badge.svg?branch=master)
-![PHP version](https://img.shields.io/packagist/php-v/vstelmakh/twig-url-highlight-bundle)
-![License](https://img.shields.io/github/license/vstelmakh/twig-url-highlight-bundle)
+![Build status](https://github.com/vstelmakh/url-highlight-symfony-bundle/workflows/build/badge.svg?branch=master)
+![PHP version](https://img.shields.io/packagist/php-v/vstelmakh/url-highlight-symfony-bundle)
+![License](https://img.shields.io/github/license/vstelmakh/url-highlight-symfony-bundle)
 
-Symfony bundle for [Twig url highlight](https://github.com/vstelmakh/twig-url-highlight) extension  
+Symfony bundle for [Url highlight](https://github.com/vstelmakh/url-highlight) library  
 
 ## Installation
 Install the latest version with:  
 ```bash
-$ composer require vstelmakh/twig-url-highlight-bundle
+$ composer require vstelmakh/url-highlight-symfony-bundle
 ```
 
 ## Setup
@@ -22,7 +22,7 @@ in the `config/bundles.php` file of your project:
 
 return [
     // ...
-    VStelmakh\TwigUrlHighlightBundle\TwigUrlHighlightBundle::class => ['all' => true],
+    VStelmakh\UrlHighlightSymfonyBundle\UrlHighlightSymfonyBundle::class => ['all' => true],
 ];
 ```
 
@@ -34,7 +34,7 @@ Use `urls_to_html` filter in your templates:
 {# output: Basic example <a href="http://example.com">http://example.com</a> #}
 ```
 
-More details see usage in [Twig url highlight](https://github.com/vstelmakh/twig-url-highlight#usage) repository.
+More details see usage in [Twig url highlight](https://github.com/vstelmakh/url-highlight-twig-extension#usage) repository.
 
 ## Credits
 [Volodymyr Stelmakh](https://github.com/vstelmakh)  

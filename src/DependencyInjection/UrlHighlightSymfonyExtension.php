@@ -1,13 +1,13 @@
 <?php
 
-namespace VStelmakh\TwigUrlHighlightBundle\DependencyInjection;
+namespace VStelmakh\UrlHighlightSymfonyBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class TwigUrlHighlightExtension extends Extension
+class UrlHighlightSymfonyExtension extends Extension
 {
     /**
      * @param array|array[] $configs

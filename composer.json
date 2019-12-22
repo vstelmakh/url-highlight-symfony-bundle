@@ -1,6 +1,6 @@
 {
-    "name": "vstelmakh/twig-url-highlight-bundle",
-    "description": "Symfony bundle for twig url highlight extension",
+    "name": "vstelmakh/url-highlight-symfony-bundle",
+    "description": "Symfony bundle for url highlight library ",
     "keywords": ["symfony", "bundle", "highlight", "url", "html"],
     "type": "symfony-bundle",
     "license": "MIT",
@@ -9,7 +9,7 @@
         "symfony/config": "^2.7|^3|^4|^5",
         "symfony/dependency-injection": "^2.7|^3|^4|^5",
         "symfony/http-kernel": "^2.7|^3|^4|^5",
-        "vstelmakh/twig-url-highlight": "^1"
+        "vstelmakh/url-highlight-twig-extension": "^1"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5",
@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VStelmakh\\TwigUrlHighlightBundle\\": "src/"
+            "VStelmakh\\UrlHighlightSymfonyBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VStelmakh\\TwigUrlHighlightBundle\\Tests\\": "tests/"
+            "VStelmakh\\UrlHighlightSymfonyBundle\\Tests\\": "tests/"
         }
     },
     "scripts": {
