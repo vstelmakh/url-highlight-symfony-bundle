@@ -8,4 +8,4 @@ parameters:
     ignoreErrors:
         -
             message: '#Cannot call method get() on Symfony\Component\DependencyInjection\ContainerInterface|null.#'
-            path: %rootDir%/../../../tests/TwigUrlHighlightBundleIntegrationTest.php
+            path: %rootDir%/../../../tests/UrlHighlightBundleTest.php
