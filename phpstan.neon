@@ -7,5 +7,9 @@ parameters:
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
         -
-            message: '#Cannot call method get() on Symfony\Component\DependencyInjection\ContainerInterface|null.#'
+            message: '#Cannot call method get() on Symfony\\Component\\DependencyInjection\\ContainerInterface|null#'
             path: %rootDir%/../../../tests/UrlHighlightBundleTest.php
+
+        -
+            message: '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children()#'
+            path: %rootDir%/../../../src/DependencyInjection/Configuration.php
