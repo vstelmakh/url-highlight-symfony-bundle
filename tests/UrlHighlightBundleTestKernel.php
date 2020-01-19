@@ -25,6 +25,7 @@ class UrlHighlightBundleTestKernel extends Kernel
      */
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
+        $loader->load(__DIR__ . '/url_highlight.yaml');
     }
 
     /**

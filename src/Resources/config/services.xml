@@ -4,10 +4,12 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services
         http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="vstelmakh.url_highlight.twig_extension" class="VStelmakh\UrlHighlightTwigExtension\UrlHighlightExtension" public="true">
+        <service id="vstelmakh.url_highlight" class="VStelmakh\UrlHighlight\UrlHighlight" public="true" />
+        <service id="VStelmakh\UrlHighlight\UrlHighlight" alias="vstelmakh.url_highlight" public="false" />
+
+        <service id="vstelmakh.url_highlight.twig_extension" class="VStelmakh\UrlHighlightTwigExtension\UrlHighlightExtension" public="false">
+            <argument type="service" id="vstelmakh.url_highlight" />
             <tag name="twig.extension" />
         </service>
-
-        <service id="VStelmakh\UrlHighlightTwigExtension\UrlHighlightExtension" alias="vstelmakh.url_highlight.twig_extension" public="false" />
     </services>
 </container>
