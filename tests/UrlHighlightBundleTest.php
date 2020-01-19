@@ -4,6 +4,7 @@ namespace VStelmakh\UrlHighlightSymfonyBundle\Tests;
 
 use PHPUnit\Framework\TestCase;
 use VStelmakh\UrlHighlight\UrlHighlight;
+use VStelmakh\UrlHighlightTwigExtension\UrlHighlightExtension;
 
 class UrlHighlightBundleTest extends TestCase
 {
@@ -15,5 +16,8 @@ class UrlHighlightBundleTest extends TestCase
 
         $twigUrlHighlight = $container->get('vstelmakh.url_highlight');
         $this->assertInstanceOf(UrlHighlight::class, $twigUrlHighlight);
+
+        $twigUrlHighlight = $container->get('vstelmakh.url_highlight.twig_extension');
+        $this->assertInstanceOf(UrlHighlightExtension::class, $twigUrlHighlight);
     }
 }
