@@ -9,7 +9,7 @@ class UrlHighlightBundleTest extends TestCase
 {
     public function testServiceWiring(): void
     {
-        $kernel = new UrlHighlightBundleTestingKernel('test', true);
+        $kernel = new UrlHighlightBundleTestKernel('test', true);
         $kernel->boot();
         $container = $kernel->getContainer();
 

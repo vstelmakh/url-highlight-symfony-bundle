@@ -22,7 +22,7 @@ in the `config/bundles.php` file of your project:
 
 return [
     // ...
-    VStelmakh\UrlHighlightSymfonyBundle\UrlHighlightSymfonyBundle::class => ['all' => true],
+    VStelmakh\UrlHighlightSymfonyBundle\UrlHighlightBundle::class => ['all' => true],
 ];
 ```
 
