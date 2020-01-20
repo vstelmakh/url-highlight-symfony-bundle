@@ -25,6 +25,6 @@ class UrlHighlightExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $definition = $container->getDefinition('vstelmakh.url_highlight');
-        $definition->setArgument(0, $config);
+        $definition->setArguments([$config]);
     }
 }

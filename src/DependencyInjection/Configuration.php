@@ -12,8 +12,14 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('url_highlight');
-        $rootNode = $treeBuilder->getRootNode();
+        if ($this->isNewTreeBuilder()) {
+            $treeBuilder = new TreeBuilder('url_highlight');
+            $rootNode = $treeBuilder->getRootNode();
+        } else {
+            $treeBuilder = new TreeBuilder();
+            $rootNode = $treeBuilder->root('url_highlight');
+        }
+
         $rootNode
             ->children()
                 ->booleanNode('match_by_tld')
@@ -44,5 +50,14 @@ class Configuration implements ConfigurationInterface
         ;
 
         return $treeBuilder;
+    }
+
+    /**
+     * From version 4.2 TreeBuilder::root is deprecated
+     * @return bool
+     */
+    private function isNewTreeBuilder(): bool
+    {
+        return method_exists(TreeBuilder::class, 'getRootNode');
     }
 }

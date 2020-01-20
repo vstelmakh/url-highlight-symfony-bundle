@@ -20,7 +20,7 @@ jobs:
         run: composer validate
 
       - name: Require Symfony dependencies
-        run: composer require --no-update symfony/config:${{ matrix.symfony }} symfony/dependency-injection:${{ matrix.symfony }} symfony/http-kernel:${{ matrix.symfony }}
+        run: composer require --no-update symfony/config:${{ matrix.symfony }} symfony/dependency-injection:${{ matrix.symfony }} symfony/http-kernel:${{ matrix.symfony }} symfony/yaml:${{ matrix.symfony }}
 
       - name: Get current date
         id: date
