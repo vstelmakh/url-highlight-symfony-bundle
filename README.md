@@ -27,7 +27,7 @@ return [
 ```
 
 ## Configuration
-Works out of the box with default configuration provided below. Bundle default options:  
+Works out of the box with default configuration:  
 ```yaml
 url_highlight:
   match_by_tld: true
@@ -35,7 +35,7 @@ url_highlight:
   scheme_blacklist: []
   scheme_whitelist: []
 ```
-If you need to change configuration add desired options to your `parameters.yaml` or create separate config in `config/packages/url_highlight.yaml`.  
+If you need to change configuration add desired options to your `parameters.yaml` or create separate config: `config/packages/url_highlight.yaml`.  
 More information about configuration options could be found in [Url highlight](https://github.com/vstelmakh/url-highlight#configuration) library.  
 
 ## Usage
