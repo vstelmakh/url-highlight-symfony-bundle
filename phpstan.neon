@@ -7,5 +7,29 @@ parameters:
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
         -
-            message: '#Cannot call method get() on Symfony\Component\DependencyInjection\ContainerInterface|null.#'
+            message: '#Cannot call method get() on Symfony\\Component\\DependencyInjection\\ContainerInterface|null#'
             path: %rootDir%/../../../tests/UrlHighlightBundleTest.php
+
+        -
+            message: '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children()#'
+            path: %rootDir%/../../../src/DependencyInjection/Configuration.php
+
+        -   # remove after drop symfony <= 4.1 support
+            message: '#Comparison operation "[><=]+" between [^\d]?\d+[^\d]? and [^\d]?\d+[^\d]? is always (true|false)#'
+            path: %rootDir%/../../../tests/UrlHighlightBundleTest.php
+
+        -   # remove after drop symfony <= 4.1 support
+            message: '#Class Symfony\\Component\\Config\\Definition\\Builder\\TreeBuilder constructor invoked with 0 parameters, 1-3 required#'
+            path: %rootDir%/../../../src/DependencyInjection/Configuration.php
+
+        -   # remove after drop symfony <= 4.1 support
+            message: '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\TreeBuilder::root()#'
+            path: %rootDir%/../../../src/DependencyInjection/Configuration.php
+
+        -   # remove after drop symfony <= 4.1 support
+            message: '#Class Symfony\\Component\\Config\\Definition\\Builder\\TreeBuilder does not have a constructor and must be instantiated without any parameters#'
+            path: %rootDir%/../../../src/DependencyInjection/Configuration.php
+
+        -   # remove after drop symfony <= 4.1 support
+            message: '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\TreeBuilder::getRootNode()#'
+            path: %rootDir%/../../../src/DependencyInjection/Configuration.php

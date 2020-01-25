@@ -6,9 +6,9 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\HttpKernel\Kernel;
-use VStelmakh\UrlHighlightSymfonyBundle\UrlHighlightSymfonyBundle;
+use VStelmakh\UrlHighlightSymfonyBundle\UrlHighlightBundle;
 
-class UrlHighlightBundleTestingKernel extends Kernel
+class UrlHighlightBundleTestKernel extends Kernel
 {
     /**
      * @return array|Bundle[]
@@ -16,7 +16,7 @@ class UrlHighlightBundleTestingKernel extends Kernel
     public function registerBundles(): array
     {
         return [
-            new UrlHighlightSymfonyBundle(),
+            new UrlHighlightBundle(),
         ];
     }
 
@@ -25,6 +25,7 @@ class UrlHighlightBundleTestingKernel extends Kernel
      */
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
+        $loader->load(__DIR__ . '/url_highlight.yaml');
     }
 
     /**
