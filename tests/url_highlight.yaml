@@ -1,5 +1,4 @@
 url_highlight:
-  match_by_tld: true
-  default_scheme: http
-  scheme_blacklist: []
-  scheme_whitelist: []
+  validator: ~
+  highlighter: ~
+  encoder: ~

@@ -22,29 +22,17 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->booleanNode('match_by_tld')
-                    ->info('if true, will map matches without scheme by top level domain')
-                    ->defaultTrue()
+                ->scalarNode('validator')
+                    ->info('Validator service id. Use: VStelmakh\UrlHighlight\Validator\ValidatorInterface to implement.')
+                    ->defaultNull()
                 ->end()
-                ->scalarNode('default_scheme')
-                    ->info('scheme to use when highlighting urls without scheme')
-                    ->defaultValue('http')
+                ->scalarNode('highlighter')
+                    ->info('Highlighter service id. Use: VStelmakh\UrlHighlight\Highlighter\HighlighterInterface to implement.')
+                    ->defaultNull()
                 ->end()
-                ->arrayNode('scheme_blacklist')
-                    ->info('array of schemes not allowed to be recognized as url')
-                    ->beforeNormalization()->ifString()->then(function ($value) {
-                        return [$value];
-                    })->end()
-                    ->prototype('scalar')->end()
-                    ->defaultValue([])
-                ->end()
-                ->arrayNode('scheme_whitelist')
-                    ->info('array of schemes explicitly allowed to be recognized as url')
-                    ->beforeNormalization()->ifString()->then(function ($value) {
-                        return [$value];
-                    })->end()
-                    ->prototype('scalar')->end()
-                    ->defaultValue([])
+                ->scalarNode('encoder')
+                    ->info('Encoder service id. Use: VStelmakh\UrlHighlight\Encoder\EncoderInterface to implement.')
+                    ->defaultNull()
                 ->end()
             ->end()
         ;
