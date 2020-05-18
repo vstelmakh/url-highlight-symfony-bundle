@@ -26,18 +26,6 @@ return [
 ];
 ```
 
-## Configuration
-Works out of the box with default configuration:  
-```yaml
-url_highlight:
-  match_by_tld: true
-  default_scheme: http
-  scheme_blacklist: []
-  scheme_whitelist: []
-```
-If you need to change configuration add desired options to your `parameters.yaml` or create separate config: `config/packages/url_highlight.yaml`.  
-More information about configuration options could be found in [Url highlight](https://github.com/vstelmakh/url-highlight#configuration) library.  
-
 ## Usage
 Bundle register url highlight service which available via autowire or directly from container:  
 ```php
@@ -69,6 +57,35 @@ Additionally `urls_to_html` filter available in templates:
 ```
 
 More details see usage in [Twig url highlight](https://github.com/vstelmakh/url-highlight-twig-extension#usage) repository.
+
+## Configuration
+Works out of the box with default configuration:  
+```yaml
+url_highlight:
+  validator: ~
+  highlighter: ~
+  encoder: ~
+```
+If you need to change configuration add desired options to your `parameters.yaml` or create separate config: `config/packages/url_highlight.yaml`.  
+More information about configuration options could be found in [Url highlight](https://github.com/vstelmakh/url-highlight#configuration) library.  
+
+### Example to define validator to not match urls without scheme
+- Define validator service. Use bundled with Url highlight library or create your own implementation
+of `VStelmakh\UrlHighlight\Validator\ValidatorInterface`:
+```yaml
+# config/services.yaml
+services:
+    ...
+    VStelmakh\UrlHighlight\Validator\Validator:
+        arguments: [false]
+```
+
+- Provide service id in `url_highlight.yaml` config
+```yaml
+# config/packages/url_highlight.yaml
+url_highlight:
+    validator: VStelmakh\UrlHighlight\Validator\Validator
+```
 
 ## Credits
 [Volodymyr Stelmakh](https://github.com/vstelmakh)  
