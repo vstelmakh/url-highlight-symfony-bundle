@@ -5,12 +5,18 @@ namespace VStelmakh\UrlHighlightSymfonyBundle\Tests;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\HttpKernel\Kernel;
 use VStelmakh\UrlHighlightSymfonyBundle\UrlHighlightBundle;
 
 class UrlHighlightBundleTestKernel extends Kernel
 {
+    /**
+     * @var Filesystem
+     */
+    private $filesystem;
+
     /**
      * @var array&array[]
      */
@@ -24,12 +30,25 @@ class UrlHighlightBundleTestKernel extends Kernel
     /**
      * @param array&array[] $services [service_id] => array[class, arguments...]
      * @param array&string[] $config
+     * @param string $environment
      */
-    public function __construct(array $services = [], array $config = [])
+    public function __construct(array $services = [], array $config = [], string $environment = 'test')
     {
+        $this->filesystem = new Filesystem();
         $this->services = $services;
         $this->config = $config;
-        parent::__construct('test', true);
+        parent::__construct($environment, true);
+    }
+
+    public function __destruct()
+    {
+        $this->clearCache();
+    }
+
+    public function clearCache(): void
+    {
+        $cacheDir = $this->getCacheDir();
+        $this->filesystem->remove($cacheDir);
     }
 
     /**

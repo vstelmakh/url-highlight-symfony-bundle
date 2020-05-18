@@ -5,6 +5,7 @@ namespace VStelmakh\UrlHighlightSymfonyBundle\Tests;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Kernel;
+use Symfony\Component\HttpKernel\KernelInterface;
 use VStelmakh\UrlHighlight\Encoder\HtmlSpecialcharsEncoder;
 use VStelmakh\UrlHighlight\Highlighter\HtmlHighlighter;
 use VStelmakh\UrlHighlight\UrlHighlight;
@@ -13,11 +14,6 @@ use VStelmakh\UrlHighlightTwigExtension\UrlHighlightExtension;
 
 class UrlHighlightBundleTest extends TestCase
 {
-    public function tearDown(): void
-    {
-        $this->clearCache();
-    }
-
     public function testServiceWiring(): void
     {
         $kernel = new UrlHighlightBundleTestKernel();
@@ -43,7 +39,8 @@ class UrlHighlightBundleTest extends TestCase
      */
     public function testConfig(array $services, array $config, string $input, string $expected): void
     {
-        $kernel = new UrlHighlightBundleTestKernel($services, $config);
+        $environment = 'test' . uniqid(); // hack to avoid cache load on Symfony < v4
+        $kernel = new UrlHighlightBundleTestKernel($services, $config, $environment);
         $kernel->boot();
         $container = $kernel->getContainer();
 
@@ -96,13 +93,5 @@ class UrlHighlightBundleTest extends TestCase
                 '&lt;p:gt;<a href="http://example.com">example.com</a>&lt;/p:gt;',
             ],
         ];
-    }
-
-    private function clearCache(): void
-    {
-        $filesystem = new Filesystem();
-        $kernel = new UrlHighlightBundleTestKernel();
-        $cacheDir = $kernel->getCacheDir();
-        $filesystem->remove($cacheDir);
     }
 }
