@@ -1,7 +1,8 @@
-# Twig url highlight bundle
-![Build status](https://github.com/vstelmakh/url-highlight-symfony-bundle/workflows/build/badge.svg?branch=master)
-![PHP version](https://img.shields.io/packagist/php-v/vstelmakh/url-highlight-symfony-bundle)
-![License](https://img.shields.io/github/license/vstelmakh/url-highlight-symfony-bundle)
+# Url highlight bundle
+[![Build status](https://github.com/vstelmakh/url-highlight-symfony-bundle/workflows/build/badge.svg?branch=master)](https://github.com/vstelmakh/url-highlight-symfony-bundle/actions)
+[![Packagist version](https://img.shields.io/packagist/v/vstelmakh/url-highlight-symfony-bundle?color=orange)](https://packagist.org/packages/vstelmakh/url-highlight-symfony-bundle)
+[![PHP version](https://img.shields.io/packagist/php-v/vstelmakh/url-highlight-symfony-bundle)](https://www.php.net/)
+[![License](https://img.shields.io/github/license/vstelmakh/url-highlight-symfony-bundle?color=yellowgreen)](LICENSE)
 
 Symfony bundle for [Url highlight](https://github.com/vstelmakh/url-highlight) library  
 
