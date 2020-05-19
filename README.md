@@ -28,7 +28,7 @@ return [
 ```
 
 ## Usage
-Bundle register url highlight service which available via autowire or directly from container:  
+Bundle provide url highlight service which available via autowire or directly from container:  
 ```php
 <?php
 
@@ -63,9 +63,9 @@ More details see usage in [Twig url highlight](https://github.com/vstelmakh/url-
 Works out of the box with default configuration:  
 ```yaml
 url_highlight:
-  validator: ~
-  highlighter: ~
-  encoder: ~
+    validator: ~
+    highlighter: ~
+    encoder: ~
 ```
 If you need to change configuration add desired options to your `parameters.yaml` or create separate config: `config/packages/url_highlight.yaml`.  
 More information about configuration options could be found in [Url highlight](https://github.com/vstelmakh/url-highlight#configuration) library.  
