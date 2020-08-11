@@ -13,10 +13,10 @@
     ],
     "require": {
         "php": "^7.1",
-        "symfony/config": "^2.7|^3|^4|^5",
-        "symfony/dependency-injection": "^2.7|^3|^4|^5",
-        "symfony/http-kernel": "^2.7|^3|^4|^5",
-        "symfony/yaml": "^2.7|^3|^4|^5",
+        "symfony/config": ">=2.7 <6",
+        "symfony/dependency-injection": ">=2.7 <6",
+        "symfony/http-kernel":">=2.7 <6",
+        "symfony/yaml": ">=2.7 <6",
         "vstelmakh/url-highlight": "^2",
         "vstelmakh/url-highlight-twig-extension": "^2"
     },
