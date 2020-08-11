@@ -12,6 +12,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
+        // @codeCoverageIgnoreStart
         if ($this->isNewTreeBuilder()) {
             $treeBuilder = new TreeBuilder('url_highlight');
             $rootNode = $treeBuilder->getRootNode();
@@ -19,6 +20,7 @@ class Configuration implements ConfigurationInterface
             $treeBuilder = new TreeBuilder();
             $rootNode = $treeBuilder->root('url_highlight');
         }
+        // @codeCoverageIgnoreEnd
 
         $rootNode
             ->children()
