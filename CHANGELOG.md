@@ -4,7 +4,7 @@ Releases following [Semantic Versioning](https://semver.org/spec/v2.0.0.html) sp
 
 For Url highlight changelog see: [CHANGELOG.md](https://github.com/vstelmakh/url-highlight/CHANGELOG.md)
 
-### v2.0.1 (unreleased)
+### v2.0.1 (2020-09-24)
 - Added PHP 8 compatibility
 
 ### v2.0.0 (2020-05-19)
