@@ -4,7 +4,8 @@
 [![PHP version](https://img.shields.io/packagist/php-v/vstelmakh/url-highlight-symfony-bundle)](https://www.php.net/)
 [![License](https://img.shields.io/github/license/vstelmakh/url-highlight-symfony-bundle?color=yellowgreen)](LICENSE)
 
-Symfony bundle for [Url highlight](https://github.com/vstelmakh/url-highlight) library  
+Symfony bundle for [Url highlight](https://github.com/vstelmakh/url-highlight) library.  
+Supported Symfony versions: `^2.7`, `^3`, `^4`, `^5`.  
 
 ## Installation
 Install the latest version with:  
