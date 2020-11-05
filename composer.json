@@ -17,8 +17,8 @@
         "symfony/dependency-injection": ">=2.7 <6",
         "symfony/http-kernel":">=2.7 <6",
         "symfony/yaml": ">=2.7 <6",
-        "vstelmakh/url-highlight": "^2",
-        "vstelmakh/url-highlight-twig-extension": "^2"
+        "vstelmakh/url-highlight": "^3",
+        "vstelmakh/url-highlight-twig-extension": "^3"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5",
